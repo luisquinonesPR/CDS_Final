@@ -1,0 +1,7 @@
+# conda virtual environment
+
+conda create --name final python=3.9.13
+
+conda activate final
+
+conda install scikit-learn
