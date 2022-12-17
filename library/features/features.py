@@ -35,11 +35,10 @@ class Polynomial(Transform):
 
 
 class One_Hot_Enc(Transform):
-
+    
     def __init__(self, df: pd.DataFrame):
         self.df = df
-
+         
     def transform(self):
-        self.var_data = pd.get_dummies(self.df, drop_first=False)
-        self.df = self.df.merge(self.var_data)
+        self.df = pd.get_dummies(self.df, drop_first=False)
         return self.df
