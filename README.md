@@ -2,11 +2,11 @@
 
 #### Authors: Giovanna Chaves, Daniela de los Santos, Margherita Philipp, Luis Quiñones
 
-Computing for Data Science - Final Project 
+Computing for Data Science - Final Project
 
 Data Science for Decision Making - Barcelona School of Economics
 
-## 
+##
 
 This library contains an end-to-end pipeline that will build a Random Forest model to predict flight prices in India, and evaluate that model it on a set of metrics. The dataset contains information about flight booking options from the website Easemytrip for flight travel between India's top 6 metro cities. For more details, see Appendix below.
 
@@ -39,7 +39,7 @@ To add other options for crossvalidation other than a train/test split, a new me
 New models can be added by including new methods that replicate the structure of the train and predict methods that currently work for Random Forest.
 
 - `Metrics`
-New metrics can be added within the class `Metrics`, following the same structure than the current present method (mse), using as inputs two arrays: y_test and y_pred.
+New metrics can be added within the class `Metrics`, following the same structure than the current present method (mse), using as inputs two arrays: `y_test` and `y_pred`.
 
 
 
@@ -48,7 +48,7 @@ New metrics can be added within the class `Metrics`, following the same structur
 The dataset currently contains information about flight booking options from the website Easemytrip for flight travel between India's top 6 metro cities. There are 300261 datapoints and 11 features in the cleaned dataset.
 
 <b>Data source:</b>
-https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction?select=Clean_Dataset.csv 
+https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction?select=Clean_Dataset.csv
 
 <b>Data collection and methodology</b>
 Octoparse scraping tool was used to extract data from the website. Data was collected in two parts: one for economy class tickets and another for business class tickets. A total of 300261 distinct flight booking options was extracted from the site. Data was collected for 50 days, from February 11th to March 31st, 2022.
