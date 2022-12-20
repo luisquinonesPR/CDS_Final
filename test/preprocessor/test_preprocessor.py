@@ -31,7 +31,7 @@ class TestPreProcessor(unittest.TestCase):
         df_input = pd.DataFrame(data)
         df_output = PreProcessor(df_input)
         df_output.mean_na(df_output.df['Col2'])
-        df_output = df_output.clean
+        df_output = df_output.fill
 
         output = df_output['Col2'].iat[-1]
         expected_output = 4
