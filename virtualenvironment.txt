@@ -8,4 +8,10 @@ conda install scikit-learn
 
 conda install pandas
 
+# tests
+
 conda install pytest
+
+conda install -c conda-forge pytest-cov
+
+pytest --cov-report term --cov-report xml:coverage.xml --cov=src
