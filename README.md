@@ -49,11 +49,11 @@ The dataset currently contains information about flight booking options from the
 <b>Data source:</b>
 https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction?select=Clean_Dataset.csv 
 
-<b>DATA COLLECTION AND METHODOLOGY</b>
+<b>Data collection and methodology</b>
 Octoparse scraping tool was used to extract data from the website. Data was collected in two parts: one for economy class tickets and another for business class tickets. A total of 300261 distinct flight booking options was extracted from the site. Data was collected for 50 days, from February 11th to March 31st, 2022.
 Data source was secondary data and was collected from Ease my trip website.
 
-<b>VARIABLES</b>
+<b>Variables</b>
 1) Airline: The name of the airline company is stored in the airline column. It is a categorical feature having 6 different airlines.
 2) Flight: Flight stores information regarding the plane's flight code. It is a categorical feature.
 3) Source City: City from which the flight takes off. It is a categorical feature having 6 unique cities.
