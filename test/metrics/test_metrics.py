@@ -9,7 +9,6 @@ class Test_Metrics(unittest.TestCase):
     def test_Mse(self):
         y_test= np.random.rand(1,10)
         y_pred= np.random.rand(1,10)
-        expected_output = mean_squared_error(y_test, y_pred)
+        expected_output = mean_squared_error(y_test, y_pred, squared=False)
         output = Metrics.mse(y_test, y_pred)
         self.assertEqual(expected_output, output)
-

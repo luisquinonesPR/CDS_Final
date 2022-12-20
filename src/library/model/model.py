@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import Ridge
 from sklearn.preprocessing import LabelEncoder
 
 class Model:
