@@ -19,4 +19,4 @@ class TestSplit(unittest.TestCase):
         train_output = df_output.train
 
         expected_output = 2 #or whatever fraction of 10 we end up defining as the test
-        self.assertEqual(len(output2), expected_output)
+        self.assertEqual(len(test_output), expected_output)
