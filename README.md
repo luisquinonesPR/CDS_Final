@@ -3,6 +3,7 @@
 #### Authors: Giovanna Chaves, Daniela de los Santos, Margherita Philipp, Luis Quiñones
 
 Computing for Data Science - Final Project 
+
 Data Science for Decision Making - Barcelona School of Economics
 
 ## 
