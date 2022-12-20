@@ -11,7 +11,7 @@ class Model:
 
     def train(self, reg):
         self.reg = reg
-        model_ = RandomForestRegressor()
+        model_ = RandomForestRegressor(max_depth=5)
         self.fit = model_.fit(self.__feat_cols_, self.__targ_col_)
 
     def predict(self, data: pd.DataFrame):
