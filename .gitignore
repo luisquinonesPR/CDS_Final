@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# eggs pytest
+
+.eggs/
+
+__pycache__
