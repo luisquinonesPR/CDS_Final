@@ -6,6 +6,14 @@ Computing for Data Science - Final Project
 
 Data Science for Decision Making - Barcelona School of Economics
 
+
+
+## How to run this library
+
+To run this codebase in a virtual environment with its corresponding dependencies, follow instructions in `virtualenvironment.txt`.
+
+To install the library, run `pip install -e .` in your virtual local environment.
+
 ##
 
 This library contains an end-to-end pipeline that will build a Random Forest model to predict flight prices in India, and evaluate that model it on a set of metrics. The dataset contains information about flight booking options from the website Easemytrip for flight travel between India's top 6 metro cities. For more details, see Appendix below.
@@ -40,6 +48,7 @@ New models can be added by including new methods that replicate the structure of
 
 - `Metrics`
 New metrics can be added within the class `Metrics`, following the same structure than the current present method (mse), using as inputs two arrays: `y_test` and `y_pred`.
+
 
 
 
