@@ -16,20 +16,20 @@ To install the library, run `pip install -e .` in your virtual local environment
 
 ##
 
-This library contains an end-to-end pipeline that will build a Random Forest model to predict flight prices in India, and evaluate that model it on a set of metrics. 
+This library contains an end-to-end pipeline that will build a Random Forest model to predict flight prices in India, and evaluate that model it on a set of metrics.
 
 ## How to use this library
 
 To build the model, you can run the functions of this library considering the following pipeline:
-1.  `Load`: reads in the data and stores a copy of it
+1.  `Load`: reads in the data and stores a copy of it.
 2.  `Preprocessor`: class that contains two methods: `clean` (drops nas for specificied columns) and `mean_na` (fills in mean for missing values for specified columns)
 3.  `Features`: three classes that follow the scheme of an abstract parent class:
     - `Standardize`: Standardize features by removing the mean and scaling to unit variance.
     - `Polynomial`: Generate polynomial and interaction features.
     - `One_Hot_Enc`: Encode categorical features as a one-hot numeric array.
-4.  `Split`: Splits dataset into train/test
+4.  `Split`: Splits dataset into train/test.
 5.  `Model`: Class with methods `train_rf` and `predict`. It trains the dataset using RandomForestRegressor and predicts fitted values for the dependent variable.
-6.  `Metrics`: Method returns RMSE from comparing predictions to test data
+6.  `Metrics`: Method returns RMSE from comparing predictions to test data.
 
 ## How to contribute to scaling this library
 
