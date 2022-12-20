@@ -16,38 +16,37 @@ To install the library, run `pip install -e .` in your virtual local environment
 
 ##
 
-This library contains an end-to-end pipeline that will build a Random Forest model to predict flight prices in India, and evaluate that model it on a set of metrics. The dataset contains information about flight booking options from the website Easemytrip for flight travel between India's top 6 metro cities. For more details, see Appendix below.
-
+This library contains an end-to-end pipeline that will build a Random Forest model to predict flight prices in India, and evaluate that model it on a set of metrics. 
 
 ## How to use this library
 
 To build the model, you can run the functions of this library considering the following pipeline:
 1.  `Load`: reads in the data and stores a copy of it
-2.  `Preprocessor`: class that contains two methods: clean (drops nas for specificied columns) and mean_na (fills in mean for missing values for specified columns)
+2.  `Preprocessor`: class that contains two methods: `clean` (drops nas for specificied columns) and `mean_na` (fills in mean for missing values for specified columns)
 3.  `Features`: three classes that follow the scheme of an abstract parent class:
-  - `Standardize`: Standardize features by removing the mean and scaling to unit variance.
-  - `Polynomial`: Generate polynomial and interaction features.
-  - `One_Hot_Enc`: Encode categorical features as a one-hot numeric array.
+    - `Standardize`: Standardize features by removing the mean and scaling to unit variance.
+    - `Polynomial`: Generate polynomial and interaction features.
+    - `One_Hot_Enc`: Encode categorical features as a one-hot numeric array.
 4.  `Split`: Splits dataset into train/test
-5.  `Model`: Class with methods train and predict. It trains the dataset using RandomForestRegressor and predicts fitted values for the dependent variable.
-6.  `Metrics`: Method returns MSE from comparing predictions to test data
+5.  `Model`: Class with methods `train_rf` and `predict`. It trains the dataset using RandomForestRegressor and predicts fitted values for the dependent variable.
+6.  `Metrics`: Method returns RMSE from comparing predictions to test data
 
 ## How to contribute to scaling this library
 
 - `Preprocessor`:
-Add new methods within `PreProcessor` class, that can modify the attribute .df
+Add new methods within `PreProcessor` class, that can modify the attribute `.df`
 
 - `Features`:
 To add new features, you shoud add a new class (such as `Standardize`, `Polynomial` and `One_Hot_Enc`) within the abstract class Transform. It will take as input the dataframe passed to the abstract class, and implement the abstract method <i>transform</i>.
 
 - `Split`
-To add other options for crossvalidation other than a train/test split, a new method can be added within the Split class that affects the attribute .df
+To add other options for crossvalidation other than a train/test split, a new method can be added within the Split class that affects the attribute `.df`
 
 - `Model`
-New models can be added by including new methods that replicate the structure of the train and predict methods that currently work for Random Forest.
+New models can be added by including new methods that replicate the structure of the `train_rf` and `predict` methods that currently work for Random Forest.
 
 - `Metrics`
-New metrics can be added within the class `Metrics`, following the same structure than the current present method (mse), using as inputs two arrays: `y_test` and `y_pred`.
+New metrics can be added within the class `Metrics`, following the same structure than the current present method (`mse`), using as inputs two arrays: `y_test` and `y_pred`.
 
 
 

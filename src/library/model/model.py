@@ -11,7 +11,7 @@ class Model:
         self.__targ_col_ = lab.fit_transform(self.__targ_col_)
 
     def train_rf(self):
-        model_ = Ridge()
+        model_ = RandomForestRegressor(max_depth=5)
         self.fit = model_.fit(self.__feat_cols_, self.__targ_col_)
 
     def predict(self, data: pd.DataFrame):
