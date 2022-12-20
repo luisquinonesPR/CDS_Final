@@ -133,3 +133,5 @@ dmypy.json
 .eggs/
 
 __pycache__
+
+.vscode

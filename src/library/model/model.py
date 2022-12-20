@@ -9,8 +9,7 @@ class Model:
         lab = LabelEncoder()
         self.__targ_col_ = lab.fit_transform(self.__targ_col_)
 
-    def train(self, reg):
-        self.reg = reg
+    def train(self):
         model_ = RandomForestRegressor(max_depth=5)
         self.fit = model_.fit(self.__feat_cols_, self.__targ_col_)
 
