@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import Ridge
 from sklearn.preprocessing import LabelEncoder
 
 class Model:
@@ -9,8 +10,8 @@ class Model:
         lab = LabelEncoder()
         self.__targ_col_ = lab.fit_transform(self.__targ_col_)
 
-    def train(self):
-        model_ = RandomForestRegressor(max_depth=5)
+    def train_rf(self):
+        model_ = Ridge()
         self.fit = model_.fit(self.__feat_cols_, self.__targ_col_)
 
     def predict(self, data: pd.DataFrame):
