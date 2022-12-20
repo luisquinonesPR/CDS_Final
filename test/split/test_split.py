@@ -29,4 +29,6 @@ class TestSplit(unittest.TestCase):
         test_output = df_output.test
         train_output = df_output.train
 
-        assert isinstance(train_output, pd.DataFrame) is True
+        self.assertIsInstance(train_output, pd.DataFrame)
+
+        #assert isinstance(train_output, pd.DataFrame) is True

@@ -5,28 +5,32 @@ import unittest
 from library.model.model import Model
 
 import pandas as pd
-from pandas.testing import assert_frame_equal
-from sklearn.datasets import load_iris
-from sklearn.utils import check_random_state
+import numpy as np
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error as MSE
 
 
-#class TestModel(unittest.TestCase):
+
+class TestModel(unittest.TestCase):
     
-#   def test_train(self):
-#        iris = load_iris()
-#        #not sure what value this permutation is adding - it's just changing the order 
-#        rng = check_random_state(1)
-#        perm = rng.permutation(iris.target.size)
-#        iris.data =  iris.data[perm]
-#        iris.target = iris.target[perm]
-#        
-#        input_model = Model(iris.data, iris.target)
-#        input_model.train(reg = "l2")
-#        
-#        output_prediction = model.predict(iris.data)
-#        expected_output =  iris.target
-#
-#        self.assertEqual(output, expected_output)
-        
+   def test_predict_type(self):
+       data = {'Col1': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        'Col2': [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+        'Tar': [10, 18, 24, 28, 30, 30, 28, 24, 18, 10]}
+
+        df_input = pd.DataFrame(data) 
+
+        target = 'Tar'
+        features = df_input.columns[df_input.columns != target]       
+        X = df_input.loc[:, features]
+        y = df_input.loc[:, [target]]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=3)
+
+
+        input_model = Model(X_train, y_train)
+        input_model.train_rf
+        output = input_model.predict(X_train)
+
+        self.assertIsInstance(output, np.ndarray)
+
