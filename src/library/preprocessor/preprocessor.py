@@ -11,10 +11,9 @@ class PreProcessor:
     self.fill = self.df.fillna(self.df.mean())
 
  def conditional_means(self, df: pd.DataFrame, subset: list):
-    df[subset] = df[subset].fillna(df.groupby('flight', as_index=False)[subset].transform('mean'))
+    df[subset] = df[subset].fillna(df.groupby('flight', as_index=True)[subset].transform('mean'))
     self.fill_means = df
 
  def conditional_modes(self, df: pd.DataFrame, subset: list):
-    df[subset] = df[subset].fillna(df.groupby('flight', as_index=False)[subset].transform(lambda S: S.mode()[0]))
+    df[subset] = df[subset].fillna(df.groupby('flight', as_index=True)[subset].transform(lambda S: S.mode()[0]))
     self.fill_modes = df
-
