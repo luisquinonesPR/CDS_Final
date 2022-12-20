@@ -137,3 +137,7 @@ __pycache__
 .vscode
 
 .DS_Store
+
+/test/.DS_Store
+
+/library/.DS_Store
